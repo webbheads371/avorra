@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Star, Plus, Eye } from 'lucide-react';
 import { BESTSELLERS } from '../data/products';

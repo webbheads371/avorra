@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { X, Search, ArrowRight } from 'lucide-react';
 import { BESTSELLERS } from '../data/products';

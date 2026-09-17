@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Leaf, FlaskConical, Heart, ArrowRight, Droplets, Shield, Sparkles, Feather, Sun, CheckCircle2 } from 'lucide-react';
 import { HERO_SLIDES } from '../data/products';
