@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -42,7 +43,7 @@ export default function Footer() {
               <li><a href="#contact">Shipping & Returns</a></li>
               <li><a href="#contact">FAQs</a></li>
               <li><a href="#contact">Track Order</a></li>
-              <li><a href="#contact">Store Locator</a></li>
+              <li><Link href="/admin" style={{ color: '#d4af37', fontWeight: 600 }}>🔐 Admin Backend Portal</Link></li>
             </ul>
           </div>
 
@@ -53,7 +54,7 @@ export default function Footer() {
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
-            <a href="#">Accessibility</a>
+            <Link href="/admin" style={{ color: '#d4af37' }}>Admin Portal</Link>
           </div>
         </div>
       </div>

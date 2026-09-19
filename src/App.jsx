@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import AnnouncementBar from './components/AnnouncementBar';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -13,17 +14,19 @@ import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import QuickViewModal from './components/QuickViewModal';
 import SearchModal from './components/SearchModal';
-import { BESTSELLERS } from './data/products';
+import { BESTSELLERS as FALLBACK_PRODUCTS } from './data/products';
 import { CheckCircle2 } from 'lucide-react';
 
 export default function App() {
+  const router = useRouter();
+  const [productsList, setProductsList] = useState(FALLBACK_PRODUCTS);
   const [cartItems, setCartItems] = useState([
     {
       id: 'p1',
-      name: 'Nourishing Shampoo',
-      subtitle: 'With Plant Botanicals',
+      name: 'AVORA Nourishing Botanical Shampoo',
+      subtitle: 'Cold-Pressed Jojoba & Aloe Vera',
       category: 'Personal Care',
-      price: 34.00,
+      price: 1499.00,
       image: '/assets/hero_shampoo_bottle.jpg',
       quantity: 1
     }
@@ -32,6 +35,23 @@ export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
+
+  // Fetch live products from local API
+  useEffect(() => {
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => {
+        if (data.products && data.products.length > 0) {
+          setProductsList(data.products);
+        }
+      })
+      .catch(err => console.log('Using local products fallback'));
+  }, []);
+
+  // Save cart to localStorage
+  useEffect(() => {
+    localStorage.setItem('avorra_cart', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   // Toast notification helper
   const showToast = (msg) => {
@@ -55,7 +75,7 @@ export default function App() {
         name: product.name || product.productName,
         subtitle: product.subtitle || product.category || 'Personal Care',
         category: product.category || 'Personal Care',
-        price: product.price || 34.00,
+        price: product.price || 1499.00,
         image: product.image,
         quantity: product.quantity || 1
       }];
@@ -77,8 +97,8 @@ export default function App() {
   };
 
   const handleCheckout = () => {
-    alert("Thank you for choosing AVORA! This is a replica demonstration checkout.");
     setIsCartOpen(false);
+    router.push('/checkout');
   };
 
   const handleSelectCategory = (catId) => {
@@ -117,6 +137,7 @@ export default function App() {
 
         {/* Featured Bestsellers Section */}
         <BestsellersSection 
+          products={productsList}
           onAddToCart={handleAddToCart}
           onQuickView={(p) => setQuickViewProduct(p)}
         />

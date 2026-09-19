@@ -1,0 +1,87 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "AVORA Nourishing Botanical Shampoo",
+      "subtitle": "Cold-Pressed Jojoba & Aloe Vera",
+      "category": "Personal Care",
+      "price": 1499,
+      "originalPrice": 1799,
+      "rating": 4.9,
+      "reviewsCount": 128,
+      "image": "/assets/hero_shampoo_bottle.jpg",
+      "badge": "Bestseller",
+      "stock": 45,
+      "description": "Cleanse, strengthen, and replenish hair with cold-pressed jojoba, aloe vera, and botanical extracts. 100% sulfate-free & scalp safe."
+    },
+    {
+      "id": "p2",
+      "name": "Daily Botanical Body Lotion",
+      "subtitle": "Hand & Body Deep Hydration",
+      "category": "Personal Care",
+      "price": 1299,
+      "originalPrice": 1499,
+      "rating": 4.8,
+      "reviewsCount": 94,
+      "image": "/assets/personal_care_category.jpg",
+      "badge": "Popular",
+      "stock": 30,
+      "description": "Fast-absorbing natural lotion infused with pure shea butter, plant squalane, and eucalyptus essential oil."
+    },
+    {
+      "id": "p3",
+      "name": "Organic Oats & Seed Superfood Blend",
+      "subtitle": "Wholefood Daily Nutrition",
+      "category": "Food & Nutrition",
+      "price": 899,
+      "originalPrice": 1099,
+      "rating": 5.0,
+      "reviewsCount": 215,
+      "image": "/assets/food_nutrition_category.jpg",
+      "badge": "Organic",
+      "stock": 60,
+      "description": "Artisanal blend of organic steel-cut oats, chia, pumpkin seeds, and wild berry extracts for active daily nourishment."
+    },
+    {
+      "id": "p4",
+      "name": "Gentle Baby Care Essentials Set",
+      "subtitle": "Natural Wash & Soothing Cream",
+      "category": "Mother & Baby",
+      "price": 2499,
+      "originalPrice": 2899,
+      "rating": 4.9,
+      "reviewsCount": 86,
+      "image": "/assets/mother_baby_category.jpg",
+      "badge": "Award Winner",
+      "stock": 25,
+      "description": "Complete organic baby care set featuring hypoallergenic lotion, tear-free wash, and soothing chamomile oil."
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-8921",
+      "customerName": "Ananya Sharma",
+      "email": "ananya.s@gmail.com",
+      "phone": "+91 98765 43210",
+      "address": "Flat 402, Green Glen Layout, Bellandur",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560103",
+      "items": [
+        {
+          "id": "p1",
+          "name": "AVORA Nourishing Botanical Shampoo",
+          "price": 1499,
+          "quantity": 2
+        }
+      ],
+      "subtotal": 2998,
+      "shipping": 0,
+      "total": 2998,
+      "paymentMethod": "UPI (Google Pay)",
+      "paymentStatus": "Paid",
+      "orderStatus": "Processing",
+      "createdAt": "2026-09-19T14:30:00.000Z"
+    }
+  ]
+}

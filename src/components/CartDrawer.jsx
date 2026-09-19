@@ -5,7 +5,7 @@ import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
 
 export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQty, onRemoveItem, onCheckout }) {
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const freeShippingThreshold = 50.00;
+  const freeShippingThreshold = 999.00;
   const progressPercent = Math.min(100, (subtotal / freeShippingThreshold) * 100);
   const remainingForFreeShipping = freeShippingThreshold - subtotal;
 
@@ -27,7 +27,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQty, on
         {/* Free Shipping Bar */}
         <div className="shipping-bar">
           {remainingForFreeShipping > 0 ? (
-            <span>Add <strong>${remainingForFreeShipping.toFixed(2)}</strong> more for <strong>Free Carbon-Neutral Shipping</strong></span>
+            <span>Add <strong>₹{remainingForFreeShipping.toLocaleString('en-IN')}</strong> more for <strong>Free Carbon-Neutral Shipping</strong></span>
           ) : (
             <span style={{ color: 'var(--color-sage-primary)', fontWeight: 600 }}>🎉 You've unlocked Complimentary Free Shipping!</span>
           )}
@@ -66,7 +66,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQty, on
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <span className="cart-item-price">${(item.price * item.quantity).toFixed(2)}</span>
+                      <span className="cart-item-price">₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
                       <button onClick={() => onRemoveItem(item.id)} style={{ color: 'var(--color-text-muted)' }}>
                         <Trash2 size={15} />
                       </button>
@@ -83,7 +83,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQty, on
           <div className="cart-footer">
             <div className="cart-subtotal">
               <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
+              <span>₹{subtotal.toLocaleString('en-IN')}</span>
             </div>
             <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginBottom: '1.25rem', textAlign: 'center' }}>
               Taxes and shipping calculated at checkout

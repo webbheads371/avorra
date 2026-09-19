@@ -4,7 +4,9 @@ import React from 'react';
 import { Star, Plus, Eye } from 'lucide-react';
 import { BESTSELLERS } from '../data/products';
 
-export default function BestsellersSection({ onAddToCart, onQuickView }) {
+export default function BestsellersSection({ products, onAddToCart, onQuickView }) {
+  const displayProducts = products && products.length > 0 ? products : BESTSELLERS;
+
   return (
     <section className="bestsellers-section" id="shop" style={{ padding: '4rem 0 6rem' }}>
       <div className="container">
@@ -14,7 +16,7 @@ export default function BestsellersSection({ onAddToCart, onQuickView }) {
         </div>
 
         <div className="products-grid">
-          {BESTSELLERS.map((product) => (
+          {displayProducts.map((product) => (
             <div key={product.id} className="product-card">
               {product.badge && <span className="product-badge">{product.badge}</span>}
 
@@ -37,9 +39,9 @@ export default function BestsellersSection({ onAddToCart, onQuickView }) {
 
                 <div className="product-meta">
                   <div className="product-price">
-                    <span className="price-current">${product.price.toFixed(2)}</span>
+                    <span className="price-current">₹{product.price.toLocaleString('en-IN')}</span>
                     {product.originalPrice && (
-                      <span className="price-old">${product.originalPrice.toFixed(2)}</span>
+                      <span className="price-old">₹{product.originalPrice.toLocaleString('en-IN')}</span>
                     )}
                   </div>
 
