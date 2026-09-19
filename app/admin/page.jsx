@@ -350,7 +350,7 @@ export default function AdminDashboard() {
               color: activeTab === 'products' ? '#fff' : '#666'
             }}
           >
-            📦 Products ({products.length})
+            Products ({products.length})
           </button>
           <button 
             onClick={() => setActiveTab('orders')}
@@ -365,7 +365,7 @@ export default function AdminDashboard() {
               color: activeTab === 'orders' ? '#fff' : '#666'
             }}
           >
-            🛒 Orders ({orders.length})
+            Orders ({orders.length})
           </button>
         </div>
 
@@ -668,7 +668,7 @@ export default function AdminDashboard() {
                     gap: '0.5rem',
                     boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
                   }}>
-                    📁 Choose Image from Device
+                    Choose Image from Device
                     <input 
                       type="file" 
                       accept="image/*" 

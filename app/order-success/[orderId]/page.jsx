@@ -109,29 +109,17 @@ export default function OrderSuccessPage() {
         )}
 
         {/* Buttons */}
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Link href="/" style={{
             backgroundColor: '#2d3829',
             color: '#fff',
-            padding: '0.85rem 1.75rem',
+            padding: '0.85rem 2rem',
             borderRadius: '100px',
             textDecoration: 'none',
             fontWeight: 600,
             fontSize: '0.95rem'
           }}>
             Continue Shopping
-          </Link>
-          <Link href="/admin" style={{
-            backgroundColor: 'transparent',
-            color: '#2d3829',
-            border: '1px solid #2d3829',
-            padding: '0.85rem 1.75rem',
-            borderRadius: '100px',
-            textDecoration: 'none',
-            fontWeight: 600,
-            fontSize: '0.95rem'
-          }}>
-            Open Admin Backend →
           </Link>
         </div>
       </div>

@@ -43,7 +43,7 @@ export default function Footer() {
               <li><a href="#contact">Shipping & Returns</a></li>
               <li><a href="#contact">FAQs</a></li>
               <li><a href="#contact">Track Order</a></li>
-              <li><Link href="/admin" style={{ color: '#d4af37', fontWeight: 600 }}>🔐 Admin Backend Portal</Link></li>
+              <li><Link href="/admin" style={{ color: '#d4af37', fontWeight: 600 }}>Admin Portal</Link></li>
             </ul>
           </div>
 

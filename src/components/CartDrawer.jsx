@@ -29,7 +29,7 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQty, on
           {remainingForFreeShipping > 0 ? (
             <span>Add <strong>₹{remainingForFreeShipping.toLocaleString('en-IN')}</strong> more for <strong>Free Carbon-Neutral Shipping</strong></span>
           ) : (
-            <span style={{ color: 'var(--color-sage-primary)', fontWeight: 600 }}>🎉 You've unlocked Complimentary Free Shipping!</span>
+            <span style={{ color: 'var(--color-sage-primary)', fontWeight: 600 }}>You've unlocked Complimentary Free Shipping!</span>
           )}
           <div className="progress-track">
             <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
