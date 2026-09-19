@@ -61,6 +61,43 @@
     {
       "customerName": "sree sri",
       "email": "antigravityy011@gmail.com",
+      "phone": "+916304050077",
+      "address": "95-2 ",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560001",
+      "items": [
+        {
+          "id": "p1",
+          "name": "AVORA Nourishing Botanical Shampoo",
+          "subtitle": "Cold-Pressed Jojoba & Aloe Vera",
+          "category": "Personal Care",
+          "price": 1499,
+          "image": "/assets/hero_shampoo_bottle.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "p3",
+          "name": "Organic Oats & Seed Superfood Blend",
+          "subtitle": "Wholefood Daily Nutrition",
+          "category": "Food & Nutrition",
+          "price": 899,
+          "image": "/assets/food_nutrition_category.jpg",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 2398,
+      "shipping": 0,
+      "total": 2398,
+      "paymentMethod": "Cash on Delivery (COD)",
+      "id": "ORD-4051",
+      "paymentStatus": "Pending",
+      "orderStatus": "Dispatched",
+      "createdAt": "2026-09-19T20:58:47.937Z"
+    },
+    {
+      "customerName": "sree sri",
+      "email": "antigravityy011@gmail.com",
       "phone": "+916304050076",
       "address": "95-2 ",
       "city": "Bengaluru",
