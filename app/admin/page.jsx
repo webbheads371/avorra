@@ -651,13 +651,75 @@ export default function AdminDashboard() {
               </div>
 
               <div>
-                <label style={{ fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.3rem' }}>Image Path / URL</label>
+                <label style={{ fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>Product Image</label>
+                
+                {/* File Upload Button */}
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '0.8rem' }}>
+                  <label style={{
+                    backgroundColor: '#2d3829',
+                    color: '#ffffff',
+                    padding: '0.65rem 1.25rem',
+                    borderRadius: '8px',
+                    fontSize: '0.88rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                  }}>
+                    📁 Choose Image from Device
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      onChange={(e) => {
+                        const file = e.target.files && e.target.files[0];
+                        if (file) {
+                          const reader = new FileReader();
+                          reader.onloadend = () => {
+                            setFormData(prev => ({ ...prev, image: reader.result }));
+                          };
+                          reader.readAsDataURL(file);
+                        }
+                      }}
+                      style={{ display: 'none' }}
+                    />
+                  </label>
+                  <span style={{ fontSize: '0.8rem', color: '#666' }}>or enter image path below</span>
+                </div>
+
+                {/* Live Image Preview */}
+                {formData.image && (
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    padding: '0.6rem',
+                    backgroundColor: '#f8f6f0',
+                    borderRadius: '8px',
+                    border: '1px solid #e5e0d8',
+                    marginBottom: '0.8rem'
+                  }}>
+                    <img 
+                      src={formData.image} 
+                      alt="Selected preview" 
+                      style={{ width: 52, height: 52, borderRadius: 6, objectFit: 'cover', border: '1px solid #ccc' }}
+                    />
+                    <div style={{ flex: 1, overflow: 'hidden' }}>
+                      <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#2d3829' }}>Image Selected & Ready</div>
+                      <div style={{ fontSize: '0.75rem', color: '#777', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {formData.image.startsWith('data:') ? 'Custom file from device' : formData.image}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <input 
                   type="text" 
                   value={formData.image} 
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  placeholder="/assets/hero_shampoo_bottle.jpg" 
-                  style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ccc' }}
+                  placeholder="/assets/hero_shampoo_bottle.jpg or image URL" 
+                  style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #ccc', fontSize: '0.88rem' }}
                 />
               </div>
 
